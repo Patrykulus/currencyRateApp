@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #F9AA33; -fx-background-radius: 0;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.rate.currencyRateApp.controllers.MainViewController">
+   <children>
+      <AreaChart fx:id="currencyChart" alternativeRowFillVisible="false" createSymbols="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="77.0" layoutY="200.0" legendSide="TOP" legendVisible="false" prefHeight="400.0" prefWidth="832.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+        <xAxis>
+          <CategoryAxis animated="false" gapStartAndEnd="false" side="BOTTOM" tickMarkVisible="false" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis animated="false" forceZeroInRange="false" minorTickVisible="false" side="LEFT" />
+        </yAxis>
+      </AreaChart>
+      <AnchorPane prefHeight="124.0" prefWidth="1014.0" style="-fx-background-color: #4A6572;">
+         <children>
+            <DatePicker fx:id="startDatePicker" layoutX="403.0" layoutY="49.0" showWeekNumbers="true" />
+            <DatePicker fx:id="endDatePicker" layoutX="617.0" layoutY="49.0" nodeOrientation="LEFT_TO_RIGHT" style="-fx-border-radius: 50;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </DatePicker>
+            <ComboBox fx:id="currencyCodeComboBox" layoutX="216.0" layoutY="49.0" onAction="#comboBoxChange" prefWidth="150.0" />
+            <Text fill="WHITE" layoutX="403.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Date">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="617.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Date">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="216.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Currency Code">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="108.0" fitWidth="150.0" layoutX="51.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text fx:id="infoLabel" fill="WHITE" layoutX="116.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info ">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
